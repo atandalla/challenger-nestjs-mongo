@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "82fc5e00-2471-445a-b5f9-6a9257d51b5a",
+		"name": "NestJS-Challenger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13128344"
+	},
+	"item": [
+		{
+			"name": "Get One User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/63bb7fb9abaadab64912fcf0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"63bb7fb9abaadab64912fcf0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYmI3ZmFlYWJhYWRhYjY0OTEyZmNlYyIsIm5hbWUiOiJBbnRob255IFRhbmRhbGxhIiwiaWF0IjoxNjczMjM3MjQ0LCJleHAiOjE2NzMzMjM2NDR9.W8F5RKlYkRD7HA3aDMAFqnyhDyiVmKNzNAxES6nv6oE",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Erika Lopez\",\r\n    \"user\": \"elopez\",\r\n    \"email\": \"elopez@outlook.com\",\r\n    \"psw\": \"lopez123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYmI3ZmFlYWJhYWRhYjY0OTEyZmNlYyIsIm5hbWUiOiJBbnRob255IFRhbmRhbGxhIiwiaWF0IjoxNjczMjM3MjQ0LCJleHAiOjE2NzMzMjM2NDR9.W8F5RKlYkRD7HA3aDMAFqnyhDyiVmKNzNAxES6nv6oE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/delete?userID=63bb7fb9abaadab64912fcfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "63bb7fb9abaadab64912fcfo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYmI3ZmFlYWJhYWRhYjY0OTEyZmNlYyIsIm5hbWUiOiJBbnRob255IFRhbmRhbGxhIiwiaWF0IjoxNjczMjM3MjQ0LCJleHAiOjE2NzMzMjM2NDR9.W8F5RKlYkRD7HA3aDMAFqnyhDyiVmKNzNAxES6nv6oE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Alexis Castelo\",\r\n    \"user\": \"acastelo\",\r\n    \"email\": \"acastelo@outlook.com\",\r\n    \"psw\": \"castelo123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/update?userID=63bb7fb4abaadab64912fcee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"update"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "63bb7fb4abaadab64912fcee"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"agonzalez@outlook.com\",\r\n    \"psw\": \"gonzalez123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
