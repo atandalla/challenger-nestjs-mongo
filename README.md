@@ -22,9 +22,22 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Challenger with NestJS and Mongo 
+Creating a Restful api with mongo and login authentication.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Description🚀
+
+_Creation of an application that allows creating, saving, deleting and updating user records. These are stored in a Mongo database. And for testing services Postman is used._
+
+## Tools 🛠️
+
+_Tools used for system development._
+
+* [Visual Studio Code]() - Versión 1.74.2
+* [Nodejs]() - Versión 18.12.1
+* [MongoDB]() - Stable Versions
+* [Git]() - Versión 2.38.1
+* [Postman]() - Versión 10.5.8
 
 ## Installation
 
@@ -58,16 +71,59 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## CRUD - Using services with Postman 📋
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Get - All Users
+```
+Path: http://localhost:3000/user
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/PostmanGetAllUsers.PNG?raw=true "Title1")
 
-## Stay in touch
+### Get - One User By ID
+```
+Path: http://localhost:3000/user/{ID}
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/PostmanGetOneUser.PNG?raw=true "Title2")
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Post - Create Users
+_Password encryption was used to create a user._
+```
+Path: http://localhost:3000/user/create
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/PostmanCreateUser.PNG?raw=true "Title3")
 
-## License
+### Delete - Users
+_Important: JWT Token must be used to be able to (delete) or (update) a user record. Otherwise, you don't have authorization._
+```
+Path: http://localhost:3000/user/delete?userID={ID}
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/PostmanDeleteUser.PNG?raw=true "Title4")
 
-Nest is [MIT licensed](LICENSE).
+### Update - Users
+_Important: JWT Token must be used to be able to (delete) or (update) a user record. Otherwise, you don't have authorization._
+```
+Path: http://localhost:3000/user/update?userID={ID}
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/PostmanUpdateUser.PNG?raw=true "Title5")
+
+## LOGIN AUTHENTICATION 📋
+_For the authentication of a user, a token was generated with JWT._
+
+_Important: This token must be used to be able to (delete) or (update) a user record. Otherwise, you don't have authorization._
+
+```
+Path: http://localhost:3000/auth/login
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/Postmanlogin.PNG?raw=true "Title6")
+
+## Path to the Swagger documentation 📋
+
+```
+Path: http://localhost:3000/api/docs
+```
+![Alt text](https://github.com/atandalla/challenger-nestjs-mongo/blob/main/testImages/SwaggerAPI.PNG?raw=true "Title7")
+
+
+## Autor ✒️
+
+* **Anthony Tandalla** - [atandalla](https://github.com/atandalla)
